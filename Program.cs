@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RoslynPath
 {
@@ -10,6 +10,23 @@ namespace RoslynPath
     {
         static void Main(string[] args)
         {
+            SyntaxTree tree = CSharpSyntaxTree.ParseText(@"
+            using System;
+
+            namespace Test
+            {
+                class Program
+                {
+                    static void Main(string[] args)
+                    {
+                        Console.WriteLine(""This is a test"");
+                    }
+                }
+            }");
+
+            SyntaxNode root = tree.GetRoot();
+
+            IEnumerable<MemberDeclarationSyntax> members = root.DescendantNodes().OfType<MemberDeclarationSyntax>();
         }
     }
 }
