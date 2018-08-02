@@ -35,14 +35,7 @@ namespace Test
 
         static void Method2()
         {
-            Console.WriteLine("This is a test");
 
-            void Test()
-            {
-                Console.WriteLine("This is a test");
-            }
-
-            Console.WriteLine("Random");
         }
     }
 }

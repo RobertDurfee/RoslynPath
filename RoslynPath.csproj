@@ -110,8 +110,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RoslynPath.cs" />
+    <Compile Include="RoslynPathMatcher.cs" />
+    <Compile Include="RoslynPathNode.cs" />
+    <Compile Include="RoslynPathMatch.cs" />
+    <Compile Include="RoslynPathMatchNode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SyntaxNodeRoslynPathExtensions.cs" />
     <Compile Include="Test.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
