@@ -1,10 +1,6 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.Text;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace RoslynPath
@@ -17,18 +13,43 @@ namespace RoslynPath
 
             //(?s:.)+?(?<brack>\{(?>[^{}]|(?&brack))*\})
 
-            RoslynPath matchPath = new RoslynPath(new Regex[] 
+            //"$[/namespace Test/][/class Program./][/static void Method./]..[/Console\.WriteLine\(.+?\)/]"
+
+            RoslynPath roslynPath = new RoslynPath(new RoslynPathStep[]
             {
-                new Regex(@"namespace Test"),
-                new Regex(@"class Program."),
-                new Regex(@"static void Method."),
-                new Regex(@"(?s).+"),
-                new Regex(@"Console\.WriteLine\(.+?\)")
+                new RoslynPathStep()
+                {
+                    StepType = RoslynPathStep.StepTypes.Root
+                },
+                new RoslynPathStep()
+                {
+                    StepType = RoslynPathStep.StepTypes.Regex,
+                    ScanType = RoslynPathStep.ScanTypes.Children,
+                    Pattern = new Regex(@"namespace Test")
+                },
+                new RoslynPathStep()
+                {
+                    StepType = RoslynPathStep.StepTypes.Regex,
+                    ScanType = RoslynPathStep.ScanTypes.Children,
+                    Pattern = new Regex(@"class Program.")
+                },
+                new RoslynPathStep()
+                {
+                    StepType = RoslynPathStep.StepTypes.Regex,
+                    ScanType = RoslynPathStep.ScanTypes.Children,
+                    Pattern = new Regex(@"static void Method.")
+                },
+                new RoslynPathStep()
+                {
+                    StepType = RoslynPathStep.StepTypes.Regex,
+                    ScanType = RoslynPathStep.ScanTypes.Descendants,
+                    Pattern = new Regex(@"Console\.WriteLine\(.+?\)")
+                }
             });
 
             RoslynPathMatcher matcher = new RoslynPathMatcher(sourceRoot);
 
-            RoslynPathMatch match = matcher.Matches(matchPath);
+            RoslynPathMatch match = matcher.Matches(roslynPath);
         }
     }
 }

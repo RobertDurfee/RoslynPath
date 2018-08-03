@@ -1,19 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
 
 namespace RoslynPath
 {
     internal class RoslynPath
     {
-        public RoslynPath(IEnumerable<Regex> regexPath)
+        public RoslynPath(IEnumerable<RoslynPathStep> path)
         {
-            if (regexPath.Any())
+            if (path.Any())
             {
-                RoslynPathNode currentMatchPathStep = new RoslynPathNode(regexPath.Last(), null);
+                RoslynPathNode currentMatchPathStep = new RoslynPathNode(path.Last(), null);
                 
-                foreach (Regex regexStep in regexPath.Reverse().Skip(1))
-                    currentMatchPathStep = new RoslynPathNode(regexStep, currentMatchPathStep);
+                foreach (RoslynPathStep step in path.Reverse().Skip(1))
+                    currentMatchPathStep = new RoslynPathNode(step, currentMatchPathStep);
 
                 Root = currentMatchPathStep;
             }
