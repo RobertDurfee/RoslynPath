@@ -110,6 +110,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\TextSpan.cs" />
     <Compile Include="RoslynPath.cs" />
     <Compile Include="RoslynPathMatcher.cs" />
     <Compile Include="RoslynPathNode.cs" />

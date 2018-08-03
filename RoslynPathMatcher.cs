@@ -1,5 +1,6 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Text;
+using RoslynPath.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -75,8 +76,8 @@ namespace RoslynPath
                 // Get the closest matching node to the current TextSpan
                 SyntaxNode matchingNode = searchPool.Where(dn => dn.Span.OverlapsWith(matchingTextSpan))
                                                     // This function may be tuned in the future...
-                                                    .OrderBy(dn => Math.Abs(dn.Span.Length - (int)dn.Span.Overlap(matchingTextSpan)?.Length))
-                                                    .Last();
+                                                    .OrderBy(dn => Math.Abs((int)dn.Span.Overlap(matchingTextSpan)?.Length - (int)dn.Span.Union(matchingTextSpan)?.Length))
+                                                    .First();
 
                 // Restrict the child search text
                 string childText = parentText.Substring(matchingNode.Span.Start - parentRoslynPathMatchNode.SyntaxNode.SpanStart, matchingNode.Span.Length);
