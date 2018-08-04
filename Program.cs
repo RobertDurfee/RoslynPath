@@ -53,7 +53,7 @@ namespace RoslynPath
 
             //RoslynPathMatch match = matcher.Matches(roslynPath);
 
-            IEnumerable<RPToken> tokens = new RPTokenizer().Tokenize(@"$[/namespace Test/][/class Program./][/static void Method./][/Console\.WriteLine\(.+?\)/]");
+            IEnumerable<RPToken> tokens = new RPTokenizer().Tokenize(@"$[/namespace Test/][/class Program./][/static void Method./][?(/Console\.WriteLine\(.+?\)/)]");
         }
     }
 }

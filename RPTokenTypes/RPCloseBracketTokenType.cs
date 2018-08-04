@@ -2,9 +2,9 @@
 
 namespace RoslynPath
 {
-    class RPFilterTokenType : IRPTokenType
+    class RPCloseBracketTokenType : IRPTokenType
     {
-        public Regex Regex => new Regex(@"\?");
+        public Regex Regex => new Regex(@"\]");
 
         public RPTokenPrecedence Precedence => RPTokenPrecedence.VeryLow;
     }

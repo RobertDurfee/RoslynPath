@@ -5,6 +5,6 @@ namespace RoslynPath
     interface IRPTokenType
     {
         Regex Regex { get; }
-        int Precedence { get; }
+        RPTokenPrecedence Precedence { get; }
     }
 }

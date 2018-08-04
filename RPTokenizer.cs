@@ -26,12 +26,14 @@ namespace RoslynPath
             RPTokenMatch lastMatch = null;
             foreach (var matchGroup in groupedMatches)
             {
-                RPTokenMatch bestMatch = matchGroup.OrderBy(m => m.Precedence).First();
+                RPTokenMatch bestMatch = matchGroup.OrderBy(m => (int)m.Precedence).First();
 
                 if (lastMatch != null && bestMatch.StartIndex < lastMatch.EndIndex)
                     continue;
 
                 yield return new RPToken(bestMatch.TokenType, bestMatch.Value);
+
+                lastMatch = bestMatch;
             }
         }
     }

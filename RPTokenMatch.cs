@@ -15,7 +15,7 @@ namespace RoslynPath
 
         public Type TokenType { get; }
 
-        public int Precedence { get; }
+        public RPTokenPrecedence Precedence { get; }
 
         public string Value { get; set; }
 

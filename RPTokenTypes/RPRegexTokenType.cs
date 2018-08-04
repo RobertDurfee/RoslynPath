@@ -4,8 +4,8 @@ namespace RoslynPath
 {
     class RPRegexTokenType : IRPTokenType
     {
-        public Regex Regex => new Regex(@"\[\/.*?\/.*?\]");
+        public Regex Regex => new Regex(@"\/.*?(?<!\\)\/[gmixXsuUAJD]*");
 
-        public int Precedence => 2;
+        public RPTokenPrecedence Precedence => RPTokenPrecedence.High;
     }
 }
