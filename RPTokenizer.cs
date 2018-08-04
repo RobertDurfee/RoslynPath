@@ -4,6 +4,8 @@ using System.Linq;
 
 namespace RoslynPath
 {
+    // This is an altered version of https://jack-vanlightly.com/blog/2016/2/24/a-more-efficient-regex-tokenizer 
+    // which uses reflection instead of enumerations for added flexibility.
     class RPTokenizer
     {
         private IEnumerable<RPTokenDefinition> _tokenDefinitions;
