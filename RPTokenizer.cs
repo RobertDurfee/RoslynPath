@@ -8,9 +8,9 @@ namespace RoslynPath
     // which uses reflection instead of enumerations for added flexibility.
     class RPTokenizer
     {
-        private IEnumerable<RPTokenDefinition> _tokenDefinitions;
+        private static IEnumerable<RPTokenDefinition> _tokenDefinitions;
 
-        public RPTokenizer()
+        static RPTokenizer()
         {
             _tokenDefinitions = AppDomain.CurrentDomain.GetAssemblies().SelectMany(a => a.GetTypes())
                 .Where(t => typeof(IRPTokenType).IsAssignableFrom(t) && !t.IsInterface && !t.IsAbstract)
