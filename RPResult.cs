@@ -25,16 +25,6 @@ namespace RoslynPath
             return _leaves;
         }
 
-        //public IEnumerator<IRPResultNode> GetEnumerator()
-        //{
-        //    return LeavesRecursive(_root).GetEnumerator();
-        //}
-
-        //IEnumerator IEnumerable.GetEnumerator()
-        //{
-        //    return GetEnumerator();
-        //}
-
         private void PopulateLeavesRecursive(IRPResultNode resultNode)
         {
             if (resultNode == null || resultNode.SyntaxNode == null)
