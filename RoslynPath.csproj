@@ -110,26 +110,32 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RPElementBuilderAttribute.cs" />
     <Compile Include="Extensions\TextSpan.cs" />
-    <Compile Include="IRPBuilder.cs" />
     <Compile Include="IRPElement.cs" />
+    <Compile Include="IRPElementBuilder.cs" />
     <Compile Include="IRPResultBuilder.cs" />
     <Compile Include="IRPResultNode.cs" />
     <Compile Include="IRPTokenType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RPBuilder.cs" />
-    <Compile Include="RPElements\RPFilterElement.cs" />
+    <Compile Include="RPElementBuilders\RPCloseBracketConsumer.cs" />
+    <Compile Include="RPElementBuilders\RPDeepConsumer.cs" />
+    <Compile Include="RPElementBuilders\RPGlobalRootElementBuilder.cs" />
+    <Compile Include="RPElementBuilders\RPIndexElementBuilder.cs" />
+    <Compile Include="RPElementBuilders\RPOpenBracketConsumer.cs" />
+    <Compile Include="RPElementBuilders\RPRegexElementBuilder.cs" />
     <Compile Include="RPElements\RPGlobalRootElement.cs" />
     <Compile Include="RPElements\RPIndexElement.cs" />
     <Compile Include="RPElements\RPRegexElement.cs" />
     <Compile Include="RPEvaluater.cs" />
+    <Compile Include="RPElementBuilder.cs" />
     <Compile Include="RPRegexFactory.cs" />
     <Compile Include="RPResult.cs" />
     <Compile Include="RPResultBuilder.cs" />
     <Compile Include="RPResultNode.cs" />
+    <Compile Include="RPFactory.cs" />
     <Compile Include="RPScanTypes.cs" />
-    <Compile Include="RPTokenListReader.cs" />
     <Compile Include="RPTokenPrecedence.cs" />
     <Compile Include="RPTokenTypes\RPCloseBracketTokenType.cs" />
     <Compile Include="RPTokenTypes\RPCloseParentheseTokenType.cs" />
