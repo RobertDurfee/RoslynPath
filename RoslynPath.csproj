@@ -134,8 +134,8 @@
     <Compile Include="RPResult.cs" />
     <Compile Include="RPResultBuilder.cs" />
     <Compile Include="RPResultNode.cs" />
-    <Compile Include="RPFactory.cs" />
     <Compile Include="RPScanTypes.cs" />
+    <Compile Include="RPTokenListReader.cs" />
     <Compile Include="RPTokenPrecedence.cs" />
     <Compile Include="RPTokenTypes\RPCloseBracketTokenType.cs" />
     <Compile Include="RPTokenTypes\RPCloseParentheseTokenType.cs" />
