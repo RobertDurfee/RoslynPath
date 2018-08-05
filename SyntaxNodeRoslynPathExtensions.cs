@@ -1,20 +1,28 @@
 ﻿using Microsoft.CodeAnalysis;
-using SF = Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 using System.Collections.Generic;
-using System;
+using System.Linq;
 
 namespace RoslynPath
 {
     public static class SyntaxNodeRoslynPathExtensions
     {
+        public static SyntaxNode SelectNode(this SyntaxNode syntaxNode, string path) => SelectNodes(syntaxNode, path).First();
+
         public static IEnumerable<SyntaxNode> SelectNodes(this SyntaxNode syntaxNode, string path)
         {
-            throw new NotImplementedException();
-        }
+            IEnumerable<RPToken> tokens = new RPTokenizer().Tokenize(path);
 
-        public static SyntaxNode SelectNode(this SyntaxNode syntaxNode, string path)
-        {
-            throw new NotImplementedException();
+            RPBuilder builder = new RPBuilder();
+            RPTokenListReader tokenListReader = new RPTokenListReader(builder);
+            tokenListReader.ReadTokenList(tokens);
+            List<IRPElement> roslynPath = builder.RoslynPath;
+            
+            RPResultBuilder resultBuilder = new RPResultBuilder();
+            RPEvaluater evaluater = new RPEvaluater(resultBuilder);
+            evaluater.EvaluateRoslynPath(roslynPath, syntaxNode);
+            RPResult result = resultBuilder.Result;
+
+            return result.Leaves().Select(rpr => rpr.SyntaxNode);
         }
     }
 }
