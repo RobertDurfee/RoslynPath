@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace RoslynPath.RPElementBuilders
+namespace RoslynPath
 {
     [RPElementBuilder(typeof(RPCloseBracketTokenType))]
     class RPCloseBracketConsumer : RPElementBuilder

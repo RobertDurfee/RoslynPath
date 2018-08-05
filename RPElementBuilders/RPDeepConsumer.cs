@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace RoslynPath.RPElementBuilders
+namespace RoslynPath
 {
     [RPElementBuilder(typeof(RPDeepTokenType))]
     class RPDeepConsumer : RPElementBuilder
