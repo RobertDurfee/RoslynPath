@@ -13,8 +13,8 @@ namespace RoslynPath
             IEnumerable<RPToken> tokens = new RPTokenizer().Tokenize(path);
 
             RPElementBuilder elementBuilder = new RPElementBuilder();
-            RPFactory factory = new RPFactory(elementBuilder);
-            IEnumerable<IRPElement> roslynPath = factory.Create(tokens);
+            RPTokenListReader tokenListReader = new RPTokenListReader(elementBuilder);
+            IEnumerable<IRPElement> roslynPath = tokenListReader.ConvertTokens(tokens);
             
             RPResultBuilder resultBuilder = new RPResultBuilder();
             RPEvaluater evaluater = new RPEvaluater(resultBuilder);

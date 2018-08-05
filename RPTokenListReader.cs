@@ -4,16 +4,16 @@ using System.Linq;
 
 namespace RoslynPath
 {
-    class RPFactory
+    class RPTokenListReader
     {
         private IRPElementBuilder _elementBuilder;
 
-        public RPFactory(IRPElementBuilder elementBuilder)
+        public RPTokenListReader(IRPElementBuilder elementBuilder)
         {
             _elementBuilder = elementBuilder;
         }
 
-        public IEnumerable<IRPElement> Create(IEnumerable<RPToken> tokens)
+        public IEnumerable<IRPElement> ConvertTokens(IEnumerable<RPToken> tokens)
         {
             List<IRPElement> roslynPath = new List<IRPElement>();
             List<RPToken> tokenList = tokens.ToList();
