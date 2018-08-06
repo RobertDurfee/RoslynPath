@@ -1,11 +1,10 @@
 ﻿using Microsoft.CodeAnalysis;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace RoslynPath
 {
-    class RPResult/* : IEnumerable<IRPResultNode>*/
+    class RPResult
     {
         private readonly IRPResultNode _root;
 

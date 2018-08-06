@@ -110,11 +110,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IRPResultNodeBuilder.cs" />
     <Compile Include="RPElementBuilderAttribute.cs" />
     <Compile Include="Extensions\TextSpan.cs" />
     <Compile Include="IRPElement.cs" />
     <Compile Include="IRPElementBuilder.cs" />
-    <Compile Include="IRPResultBuilder.cs" />
     <Compile Include="IRPResultNode.cs" />
     <Compile Include="IRPTokenType.cs" />
     <Compile Include="Program.cs" />
@@ -128,12 +128,16 @@
     <Compile Include="RPElements\RPGlobalRootElement.cs" />
     <Compile Include="RPElements\RPIndexElement.cs" />
     <Compile Include="RPElements\RPRegexElement.cs" />
-    <Compile Include="RPEvaluater.cs" />
     <Compile Include="RPElementBuilder.cs" />
+    <Compile Include="RPEvaluator.cs" />
     <Compile Include="RPRegexFactory.cs" />
     <Compile Include="RPResult.cs" />
-    <Compile Include="RPResultBuilder.cs" />
     <Compile Include="RPResultNode.cs" />
+    <Compile Include="RPResultNodeBuilder.cs" />
+    <Compile Include="RPResultNodeBuilderAttribute.cs" />
+    <Compile Include="RPResultNodeBuilders\RPGlobalRootResultNodeBuilder.cs" />
+    <Compile Include="RPResultNodeBuilders\RPIndexResultNodeBuilder.cs" />
+    <Compile Include="RPResultNodeBuilders\RPRegexResultNodeBuilder.cs" />
     <Compile Include="RPScanTypes.cs" />
     <Compile Include="RPTokenListReader.cs" />
     <Compile Include="RPTokenPrecedence.cs" />
@@ -164,5 +168,6 @@
     <Analyzer Include="packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

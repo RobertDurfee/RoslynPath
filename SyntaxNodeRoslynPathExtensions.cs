@@ -15,13 +15,10 @@ namespace RoslynPath
             RPElementBuilder elementBuilder = new RPElementBuilder();
             RPTokenListReader tokenListReader = new RPTokenListReader(elementBuilder);
             IEnumerable<IRPElement> roslynPath = tokenListReader.ConvertTokens(tokens);
-            
-            RPResultBuilder resultBuilder = new RPResultBuilder();
-            RPEvaluater evaluater = new RPEvaluater(resultBuilder);
-            evaluater.EvaluateRoslynPath(roslynPath, syntaxNode);
-            RPResult result = resultBuilder.Result;
 
-            return result.Leaves().Select(rpr => rpr.SyntaxNode);
+            RPResultNodeBuilder resultNodeBuilder = new RPResultNodeBuilder();
+            RPEvaluator evaluator = new RPEvaluator(resultNodeBuilder);
+            return evaluator.Evaluate(syntaxNode, roslynPath);
         }
     }
 }

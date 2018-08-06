@@ -1,10 +1,4 @@
-﻿using Microsoft.CodeAnalysis;
-using System.Collections.Generic;
-
-namespace RoslynPath
+﻿namespace RoslynPath
 {
-    interface IRPElement
-    {
-        IEnumerable<SyntaxNode> Matches(SyntaxNode input);
-    }
+    interface IRPElement { }
 }
