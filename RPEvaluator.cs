@@ -17,6 +17,7 @@ namespace RoslynPath
         {
             IRPResultNode resultNode = _builder.EvaluateElement(new RPResultNode(null, syntaxNode), roslynPath);
 
+            _leaves = new List<IRPResultNode>();
             PopulateLeavesRecursive(resultNode);
 
             return _leaves.Select(rn => rn.SyntaxNode);
