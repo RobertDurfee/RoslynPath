@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 
 namespace RoslynPath
 {
@@ -12,7 +12,7 @@ namespace RoslynPath
 
         static RPTokenizer()
         {
-            _tokenDefinitions = AppDomain.CurrentDomain.GetAssemblies().SelectMany(a => a.GetTypes())
+            _tokenDefinitions = Assembly.GetExecutingAssembly().GetTypes()
                 .Where(t => typeof(IRPTokenType).IsAssignableFrom(t) && !t.IsInterface && !t.IsAbstract)
                 .Select(t => new RPTokenDefinition(t));
         }

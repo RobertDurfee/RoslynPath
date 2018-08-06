@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 
 namespace RoslynPath
 {
@@ -15,7 +16,7 @@ namespace RoslynPath
         {
             _rpTokenTypeRPElementBuilderPairs = new Dictionary<Type, Type>();
 
-            IEnumerable<Type> concreteElementBuilders = AppDomain.CurrentDomain.GetAssemblies().SelectMany(a => a.GetTypes())
+            IEnumerable<Type> concreteElementBuilders = Assembly.GetExecutingAssembly().GetTypes()
                 .Where(t => typeof(IRPElementBuilder).IsAssignableFrom(t) && !t.IsAbstract && !t.IsInterface);
 
             foreach (Type concreteElementBuilder in concreteElementBuilders)
