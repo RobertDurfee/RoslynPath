@@ -131,7 +131,6 @@
     <Compile Include="RPElementBuilder.cs" />
     <Compile Include="RPEvaluator.cs" />
     <Compile Include="RPRegexFactory.cs" />
-    <Compile Include="RPResult.cs" />
     <Compile Include="RPResultNode.cs" />
     <Compile Include="RPResultNodeBuilder.cs" />
     <Compile Include="RPResultNodeBuilderAttribute.cs" />
