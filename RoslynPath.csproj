@@ -126,11 +126,13 @@
     <Compile Include="RPElementBuilders\RPOpenBracketConsumer.cs" />
     <Compile Include="RPElementBuilders\RPRegexElementBuilder.cs" />
     <Compile Include="RPElementBuilders\RPSyntaxKindElementBuilder.cs" />
+    <Compile Include="RPElementBuilders\RPSyntaxKindRegexPairElementBuilder.cs" />
     <Compile Include="RPElements\RPGlobalRootElement.cs" />
     <Compile Include="RPElements\RPIndexElement.cs" />
     <Compile Include="RPElements\RPRegexElement.cs" />
     <Compile Include="RPElementBuilder.cs" />
     <Compile Include="RPElements\RPSyntaxKindElement.cs" />
+    <Compile Include="RPElements\RPSyntaxKindRegexPairElement.cs" />
     <Compile Include="RPEvaluator.cs" />
     <Compile Include="RPRegexFactory.cs" />
     <Compile Include="RPResultNode.cs" />
@@ -139,6 +141,7 @@
     <Compile Include="RPResultNodeBuilders\RPGlobalRootResultNodeBuilder.cs" />
     <Compile Include="RPResultNodeBuilders\RPIndexResultNodeBuilder.cs" />
     <Compile Include="RPResultNodeBuilders\RPRegexResultNodeBuilder.cs" />
+    <Compile Include="RPResultNodeBuilders\RPSyntaxKindRegexPairResultNodeBuilder.cs" />
     <Compile Include="RPResultNodeBuilders\RPSyntaxKindResultNodeBuilder.cs" />
     <Compile Include="RPScanTypes.cs" />
     <Compile Include="RPTokenListReader.cs" />

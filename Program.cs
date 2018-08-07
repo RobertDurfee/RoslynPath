@@ -11,7 +11,7 @@ namespace RoslynPath
         {
             SyntaxNode sourceRoot = CSharpSyntaxTree.ParseText(File.ReadAllText("Test.cs")).GetRoot();
 
-            IEnumerable<SyntaxNode> matches = sourceRoot.SelectNodes(@"$[/namespace Test/][""ClassDeclaration""][/static void Method./]..[/Console\.WriteLine\(.+?\)/]");
+            IEnumerable<SyntaxNode> matches = sourceRoot.SelectNodes(@"$[/namespace Test/][""ClassDeclaration"":/Program1/][/static void Method./]..[/Console\.WriteLine\(.+?\)/]");
         }
     }
 }
