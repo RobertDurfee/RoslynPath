@@ -144,7 +144,7 @@
     <Compile Include="RPResultNodeBuilders\RPSyntaxKindRegexPairResultNodeBuilder.cs" />
     <Compile Include="RPResultNodeBuilders\RPSyntaxKindResultNodeBuilder.cs" />
     <Compile Include="RPScanTypes.cs" />
-    <Compile Include="RPTextSpanOverlapRanker.cs" />
+    <Compile Include="RPTextSpanComparer.cs" />
     <Compile Include="RPTokenListReader.cs" />
     <Compile Include="RPTokenPrecedence.cs" />
     <Compile Include="RPTokenTypes\RPCloseBracketTokenType.cs" />

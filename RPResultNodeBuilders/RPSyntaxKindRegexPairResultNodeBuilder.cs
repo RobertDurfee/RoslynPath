@@ -10,6 +10,8 @@ namespace RoslynPath
     [RPResultNodeBuilder(typeof(RPSyntaxKindRegexPairElement))]
     class RPSyntaxKindRegexPairResultNodeBuilder : RPResultNodeBuilder
     {
+        private static readonly RPTextSpanComparer _rpTextSpanComparer = new RPTextSpanComparer();
+
         public override IRPResultNode EvaluateElement(IRPResultNode resultNode, IEnumerable<IRPElement> elements)
         {
             if (!(elements.First() is RPSyntaxKindRegexPairElement syntaxKindRegexPairElement))
@@ -45,7 +47,7 @@ namespace RoslynPath
                 searchPool = searchPool.Where(sn => sn.IsKind(syntaxKindRegexPairElement.SyntaxKind));
 
                 SyntaxNode matchingNode = searchPool.Where(sn => sn.Span.OverlapsWith(matchingTextSpan))
-                    .OrderBy(sn => RPTextSpanOverlapRanker.Rank(sn.Span, matchingTextSpan))
+                    .OrderBy(sn => (sn.Span, matchingTextSpan), _rpTextSpanComparer)
                     // There may not be any matches because of the limited scope
                     .FirstOrDefault();
 

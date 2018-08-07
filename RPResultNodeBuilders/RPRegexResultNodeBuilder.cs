@@ -10,6 +10,8 @@ namespace RoslynPath
     [RPResultNodeBuilder(typeof(RPRegexElement))]
     class RPRegexResultNodeBuilder : RPResultNodeBuilder
     {
+        private static readonly RPTextSpanComparer _rpTextSpanComparer = new RPTextSpanComparer();
+
         public override IRPResultNode EvaluateElement(IRPResultNode resultNode, IEnumerable<IRPElement> elements)
         {
             if (!(elements.First() is RPRegexElement regexElement))
@@ -41,7 +43,7 @@ namespace RoslynPath
                 }
 
                 SyntaxNode matchingNode = searchPool.Where(sn => sn.Span.OverlapsWith(matchingTextSpan))
-                    .OrderBy(sn => RPTextSpanOverlapRanker.Rank(sn.Span, matchingTextSpan))
+                    .OrderBy(sn => (sn.Span, matchingTextSpan), _rpTextSpanComparer)
                     // There has to be at least one match given that there is a TextSpan
                     .First();
 
