@@ -1,6 +1,5 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Text;
-using RoslynPath.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,7 +41,7 @@ namespace RoslynPath
                 }
 
                 SyntaxNode matchingNode = searchPool.Where(sn => sn.Span.OverlapsWith(matchingTextSpan))
-                    .OrderBy(sn => Math.Abs((int)sn.Span.Overlap(matchingTextSpan)?.Length - (int)sn.Span.Union(matchingTextSpan)?.Length))
+                    .OrderBy(sn => RPTextSpanOverlapRanker.Rank(sn.Span, matchingTextSpan))
                     // There has to be at least one match given that there is a TextSpan
                     .First();
 
