@@ -20,9 +20,9 @@ namespace RoslynPath
             int yOverlapUnionDifference = Math.Abs(yOverlap - yUnion);
 
             if (xOverlapUnionDifference > yOverlapUnionDifference)
-                return -1;
-            else if (xOverlapUnionDifference < yOverlapUnionDifference)
                 return 1;
+            else if (xOverlapUnionDifference < yOverlapUnionDifference)
+                return -1;
             else
                 return 0;
         }
