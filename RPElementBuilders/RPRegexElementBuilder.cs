@@ -5,7 +5,7 @@ using System.Linq;
 namespace RoslynPath
 {
     [RPElementBuilder(typeof(RPRegexTokenType))]
-    class RPRegexElementBuilder : RPElementBuilder
+    internal class RPRegexElementBuilder : RPElementBuilder
     {
         public RPRegexElementBuilder(Dictionary<string, string> options, IRPElement element) : base(options, element) { }
 

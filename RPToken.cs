@@ -2,7 +2,7 @@
 
 namespace RoslynPath
 {
-    class RPToken
+    internal class RPToken
     {
         public RPToken(Type tokenType, string value)
         {

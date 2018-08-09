@@ -2,7 +2,7 @@
 
 namespace RoslynPath
 {
-    interface IRPTokenType
+    internal interface IRPTokenType
     {
         Regex Regex { get; }
         RPTokenPrecedence Precedence { get; }

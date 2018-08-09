@@ -2,7 +2,7 @@
 
 namespace RoslynPath
 {
-    class RPRegexElement : IRPElement
+    internal class RPRegexElement : IRPElement
     {
         public RPScanTypes ScanType { get; }
         public Regex Regex { get; }

@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 namespace RoslynPath
 {
     [RPResultNodeBuilder(typeof(RPSyntaxKindRegexPairElement))]
-    class RPSyntaxKindRegexPairResultNodeBuilder : RPResultNodeBuilder
+    internal class RPSyntaxKindRegexPairResultNodeBuilder : RPResultNodeBuilder
     {
         private static readonly RPTextSpanComparer _rpTextSpanComparer = new RPTextSpanComparer();
 

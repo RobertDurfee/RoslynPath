@@ -5,7 +5,7 @@ using System.Linq;
 namespace RoslynPath
 {
     [RPElementBuilder(typeof(RPDeepTokenType))]
-    class RPDeepConsumer : RPElementBuilder
+    internal class RPDeepConsumer : RPElementBuilder
     {
         public RPDeepConsumer(Dictionary<string, string> options, IRPElement element) : base(options, element) { }
 

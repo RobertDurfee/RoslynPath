@@ -2,7 +2,7 @@
 
 namespace RoslynPath
 {
-    class RPRegexTokenType : IRPTokenType
+    internal class RPRegexTokenType : IRPTokenType
     {
         public Regex Regex => new Regex(@"\/.*?(?<!\\)\/[imsnxr]*");
 

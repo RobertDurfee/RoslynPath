@@ -2,7 +2,7 @@
 
 namespace RoslynPath
 {
-    class RPSyntaxKindRegexPairTokenType : IRPTokenType
+    internal class RPSyntaxKindRegexPairTokenType : IRPTokenType
     {
         public Regex Regex => new Regex(@":");
 

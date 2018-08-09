@@ -5,7 +5,7 @@ using System.Linq;
 namespace RoslynPath
 {
     [RPElementBuilder(typeof(RPOpenBracketTokenType))]
-    class RPOpenBracketConsumer : RPElementBuilder
+    internal class RPOpenBracketConsumer : RPElementBuilder
     {
         public RPOpenBracketConsumer(Dictionary<string, string> options, IRPElement element) : base(options, element) { }
 

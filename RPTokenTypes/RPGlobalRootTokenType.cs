@@ -2,7 +2,7 @@
 
 namespace RoslynPath
 {
-    class RPGlobalRootTokenType : IRPTokenType
+    internal class RPGlobalRootTokenType : IRPTokenType
     {
         public Regex Regex => new Regex(@"\$");
 

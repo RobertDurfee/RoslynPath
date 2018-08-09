@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace RoslynPath
 {
-    class RPSyntaxKindRegexPairElement : IRPElement
+    internal class RPSyntaxKindRegexPairElement : IRPElement
     {
         public SyntaxKind SyntaxKind { get; }
         public Regex Regex { get; }

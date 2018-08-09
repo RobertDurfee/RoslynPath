@@ -3,7 +3,7 @@ using System;
 
 namespace RoslynPath.Extensions
 {
-    public static class TextSpanExtensions
+    internal static class TextSpanExtensions
     {
         public static TextSpan? Union(this TextSpan source, TextSpan span)
         {

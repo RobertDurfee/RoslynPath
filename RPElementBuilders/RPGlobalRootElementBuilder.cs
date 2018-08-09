@@ -3,7 +3,7 @@
 namespace RoslynPath
 {
     [RPElementBuilder(typeof(RPGlobalRootTokenType))]
-    class RPGlobalRootElementBuilder : RPElementBuilder
+    internal class RPGlobalRootElementBuilder : RPElementBuilder
     {
         public RPGlobalRootElementBuilder(Dictionary<string, string> options, IRPElement element) : base(options, element) { }
         
