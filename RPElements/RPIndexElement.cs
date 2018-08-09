@@ -1,6 +1,6 @@
 ﻿namespace RoslynPath
 {
-    class RPIndexElement : IRPElement
+    internal class RPIndexElement : IRPElement
     {
         public int Index { get; }
         public RPScanTypes ScanType { get; }

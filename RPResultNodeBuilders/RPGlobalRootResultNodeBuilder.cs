@@ -4,7 +4,7 @@ using System.Linq;
 namespace RoslynPath
 {
     [RPResultNodeBuilder(typeof(RPGlobalRootElement))]
-    class RPGlobalRootResultNodeBuilder : RPResultNodeBuilder
+    internal class RPGlobalRootResultNodeBuilder : RPResultNodeBuilder
     {
         public override IRPResultNode EvaluateElement(IRPResultNode resultNode, IEnumerable<IRPElement> elements)
         {

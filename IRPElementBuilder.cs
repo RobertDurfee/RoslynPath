@@ -2,7 +2,7 @@
 
 namespace RoslynPath
 {
-    interface IRPElementBuilder
+    internal interface IRPElementBuilder
     {
         void Clean();
 

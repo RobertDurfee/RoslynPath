@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace RoslynPath
 {
-    class RPTextSpanComparer : IComparer<(TextSpan, TextSpan)>
+    internal class RPTextSpanComparer : IComparer<(TextSpan, TextSpan)>
     {
         public int Compare((TextSpan, TextSpan) x, (TextSpan, TextSpan) y)
         {

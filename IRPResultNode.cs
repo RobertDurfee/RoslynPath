@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace RoslynPath
 {
-    interface IRPResultNode
+    internal interface IRPResultNode
     {
         IRPResultNode Parent { get; }
 

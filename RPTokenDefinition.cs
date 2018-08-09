@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace RoslynPath
 {
-    class RPTokenDefinition
+    internal class RPTokenDefinition
     {
         private Type _tokenType;
         private Regex _regex;

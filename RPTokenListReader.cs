@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace RoslynPath
 {
-    class RPTokenListReader
+    internal class RPTokenListReader
     {
         private IRPElementBuilder _elementBuilder;
 

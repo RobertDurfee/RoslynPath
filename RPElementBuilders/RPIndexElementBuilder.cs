@@ -5,7 +5,7 @@ using System.Linq;
 namespace RoslynPath
 {
     [RPElementBuilder(typeof(RPIntegerTokenType))]
-    class RPIndexElementBuilder : RPElementBuilder
+    internal class RPIndexElementBuilder : RPElementBuilder
     {
         public RPIndexElementBuilder(Dictionary<string, string> options, IRPElement element) : base(options, element) { }
 

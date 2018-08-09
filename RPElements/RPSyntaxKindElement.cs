@@ -2,7 +2,7 @@
 
 namespace RoslynPath
 {
-    class RPSyntaxKindElement : IRPElement
+    internal class RPSyntaxKindElement : IRPElement
     {
         public SyntaxKind SyntaxKind { get; }
         public RPScanTypes ScanType { get; }

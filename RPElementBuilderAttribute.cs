@@ -3,7 +3,7 @@
 namespace RoslynPath
 {
     [AttributeUsage(AttributeTargets.Class)]
-    class RPElementBuilderAttribute : Attribute
+    internal class RPElementBuilderAttribute : Attribute
     {
         public Type TokenType { get; }
 

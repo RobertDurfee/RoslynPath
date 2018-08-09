@@ -2,7 +2,7 @@
 
 namespace RoslynPath
 {
-    interface IRPResultNodeBuilder
+    internal interface IRPResultNodeBuilder
     {
         IRPResultNode EvaluateElement(IRPResultNode resultNode, IEnumerable<IRPElement> element);
     }

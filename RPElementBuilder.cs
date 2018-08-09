@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace RoslynPath
 {
-    class RPElementBuilder : IRPElementBuilder
+    internal class RPElementBuilder : IRPElementBuilder
     {
         protected Dictionary<string, string> Options { get; set; }
         public IRPElement Element { get; protected set; }

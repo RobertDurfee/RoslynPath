@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace RoslynPath
 {
-    class RPEvaluator
+    internal class RPEvaluator
     {
         private IRPResultNodeBuilder _builder;
 

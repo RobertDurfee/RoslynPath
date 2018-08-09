@@ -2,7 +2,7 @@
 
 namespace RoslynPath
 {
-    class RPIntegerTokenType : IRPTokenType
+    internal class RPIntegerTokenType : IRPTokenType
     {
         public Regex Regex => new Regex(@"\d+");
 

@@ -2,7 +2,7 @@
 
 namespace RoslynPath
 {
-    class RPCloseBracketTokenType : IRPTokenType
+    internal class RPCloseBracketTokenType : IRPTokenType
     {
         public Regex Regex => new Regex(@"\]");
 

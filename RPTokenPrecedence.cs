@@ -1,6 +1,6 @@
 ﻿namespace RoslynPath
 {
-    enum RPTokenPrecedence
+    internal enum RPTokenPrecedence
     {
         Invalid,
         VeryHigh,
