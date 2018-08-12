@@ -51,12 +51,14 @@
     <Compile Include="RPElementBuilders\RPRegexElementBuilder.cs" />
     <Compile Include="RPElementBuilders\RPSyntaxKindElementBuilder.cs" />
     <Compile Include="RPElementBuilders\RPSyntaxKindRegexPairElementBuilder.cs" />
+    <Compile Include="RPElementBuilders\RPWildcardElementBuilder.cs" />
     <Compile Include="RPElements\RPGlobalRootElement.cs" />
     <Compile Include="RPElements\RPIndexElement.cs" />
     <Compile Include="RPElements\RPRegexElement.cs" />
     <Compile Include="RPElementBuilder.cs" />
     <Compile Include="RPElements\RPSyntaxKindElement.cs" />
     <Compile Include="RPElements\RPSyntaxKindRegexPairElement.cs" />
+    <Compile Include="RPElements\RPWildcardElement.cs" />
     <Compile Include="RPEvaluator.cs" />
     <Compile Include="RPRegexFactory.cs" />
     <Compile Include="RPResultNode.cs" />
@@ -67,6 +69,7 @@
     <Compile Include="RPResultNodeBuilders\RPRegexResultNodeBuilder.cs" />
     <Compile Include="RPResultNodeBuilders\RPSyntaxKindRegexPairResultNodeBuilder.cs" />
     <Compile Include="RPResultNodeBuilders\RPSyntaxKindResultNodeBuilder.cs" />
+    <Compile Include="RPResultNodeBuilders\RPWildcardResultNodeBuilder.cs" />
     <Compile Include="RPScanTypes.cs" />
     <Compile Include="RPTextSpanComparer.cs" />
     <Compile Include="RPTokenListReader.cs" />
@@ -87,6 +90,7 @@
     <Compile Include="RPTokenMatch.cs" />
     <Compile Include="RPTokenTypes\RPSyntaxKindRegexPairTokenType.cs" />
     <Compile Include="RPTokenTypes\RPSyntaxKindTokenType.cs" />
+    <Compile Include="RPTokenTypes\RPWildcardTokenType.cs" />
     <Compile Include="SyntaxNodeRoslynPathExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
