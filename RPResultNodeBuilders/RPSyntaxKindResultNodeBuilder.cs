@@ -6,7 +6,7 @@ using System.Linq;
 namespace RoslynPath
 {
     [RPResultNodeBuilder(typeof(RPSyntaxKindElement))]
-    class RPSyntaxKindResultNodeBuilder : RPResultNodeBuilder
+    internal class RPSyntaxKindResultNodeBuilder : RPResultNodeBuilder
     {
         public override IRPResultNode EvaluateElement(IRPResultNode resultNode, IEnumerable<IRPElement> elements)
         {

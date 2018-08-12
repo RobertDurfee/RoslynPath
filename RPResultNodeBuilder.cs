@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace RoslynPath
 {
-    class RPResultNodeBuilder : IRPResultNodeBuilder
+    internal class RPResultNodeBuilder : IRPResultNodeBuilder
     {
         private static readonly Dictionary<Type, Type> _rpElementRPResultNodeBuilderPairs;
 

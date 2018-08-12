@@ -6,7 +6,7 @@ using System.Linq;
 namespace RoslynPath
 {
     [RPElementBuilder(typeof(RPSyntaxKindTokenType))]
-    class RPSyntaxKindElementBuilder : RPElementBuilder
+    internal class RPSyntaxKindElementBuilder : RPElementBuilder
     {
         public RPSyntaxKindElementBuilder(Dictionary<string, string> options, IRPElement element) : base(options, element) { }
 

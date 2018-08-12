@@ -1,4 +1,4 @@
 ﻿namespace RoslynPath
 {
-    interface IRPElement { }
+    internal interface IRPElement { }
 }

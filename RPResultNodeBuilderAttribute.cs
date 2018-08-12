@@ -3,7 +3,7 @@
 namespace RoslynPath
 {
     [AttributeUsage(AttributeTargets.Class)]
-    class RPResultNodeBuilderAttribute : Attribute
+    internal class RPResultNodeBuilderAttribute : Attribute
     {
         public Type ElementType { get; }
 

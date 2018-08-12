@@ -3,7 +3,7 @@ using Microsoft.CodeAnalysis;
 
 namespace RoslynPath
 {
-    class RPResultNode : IRPResultNode
+    internal class RPResultNode : IRPResultNode
     {
         public RPResultNode(IRPResultNode parent, SyntaxNode syntaxNode)
         {

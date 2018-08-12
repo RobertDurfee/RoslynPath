@@ -2,7 +2,7 @@
 
 namespace RoslynPath
 {
-    class RPDeepTokenType : IRPTokenType
+    internal class RPDeepTokenType : IRPTokenType
     {
         public Regex Regex => new Regex(@"\.\.");
 

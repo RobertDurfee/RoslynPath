@@ -2,7 +2,7 @@
 
 namespace RoslynPath
 {
-    class RPTokenMatch
+    internal class RPTokenMatch
     {
         public RPTokenMatch(Type tokenType)
         {

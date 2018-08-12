@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace RoslynPath
 {
-    static class RPRegexFactory
+    internal static class RPRegexFactory
     {
         public static Regex Create(string input)
         {

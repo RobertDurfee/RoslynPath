@@ -3,7 +3,7 @@
 namespace RoslynPath
 {
     [RPElementBuilder(typeof(RPCloseBracketTokenType))]
-    class RPCloseBracketConsumer : RPElementBuilder
+    internal class RPCloseBracketConsumer : RPElementBuilder
     {
         public RPCloseBracketConsumer(Dictionary<string, string> options, IRPElement element) : base(options, element) { }
 

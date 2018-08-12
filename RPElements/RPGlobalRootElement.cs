@@ -1,4 +1,4 @@
 ﻿namespace RoslynPath
 {
-    class RPGlobalRootElement : IRPElement { }
+    internal class RPGlobalRootElement : IRPElement { }
 }

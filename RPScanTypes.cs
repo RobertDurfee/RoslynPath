@@ -1,6 +1,6 @@
 ﻿namespace RoslynPath
 {
-    enum RPScanTypes
+    internal enum RPScanTypes
     {
         Invalid,
         Children,

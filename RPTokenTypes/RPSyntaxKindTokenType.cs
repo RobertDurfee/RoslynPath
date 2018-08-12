@@ -2,7 +2,7 @@
 
 namespace RoslynPath
 {
-    class RPSyntaxKindTokenType : IRPTokenType
+    internal class RPSyntaxKindTokenType : IRPTokenType
     {
         public Regex Regex => new Regex(@"\""\w+\""");
 
