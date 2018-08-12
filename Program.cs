@@ -1,5 +1,7 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -10,8 +12,6 @@ namespace RoslynPath
         static void Main(string[] args)
         {
             SyntaxNode sourceRoot = CSharpSyntaxTree.ParseText(File.ReadAllText("Test.cs")).GetRoot();
-
-            IEnumerable<SyntaxNode> matches = sourceRoot.SelectNodes(@"$[/namespace Test/][""ClassDeclaration"":/Program1/][/static void Method./]..[/Console\.WriteLine\(.+?\)/]");
         }
     }
 }

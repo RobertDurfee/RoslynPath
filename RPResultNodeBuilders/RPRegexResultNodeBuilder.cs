@@ -26,6 +26,8 @@ namespace RoslynPath
             if (matchingTextSpans.Count() == 0)
                 return null;
 
+            bool anyMatches = false;
+
             foreach (TextSpan matchingTextSpan in matchingTextSpans)
             {
                 IEnumerable<SyntaxNode> searchPool;
@@ -44,13 +46,16 @@ namespace RoslynPath
 
                 SyntaxNode matchingNode = searchPool.Where(sn => sn.Span.OverlapsWith(matchingTextSpan))
                     .OrderBy(sn => (sn.Span, matchingTextSpan), _rpTextSpanComparer)
-                    // There has to be at least one match given that there is a TextSpan
-                    .First();
+                    .FirstOrDefault();
 
+                if (matchingNode == null)
+                    continue;
+
+                anyMatches = true;
                 resultNode.Children.Add(base.EvaluateElement(new RPResultNode(resultNode, matchingNode), elements.Skip(1)));
             }
 
-            return resultNode;
+            return anyMatches ? resultNode : null;
         }
     }
 }

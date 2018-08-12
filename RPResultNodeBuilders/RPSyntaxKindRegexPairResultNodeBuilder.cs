@@ -48,7 +48,6 @@ namespace RoslynPath
 
                 SyntaxNode matchingNode = searchPool.Where(sn => sn.Span.OverlapsWith(matchingTextSpan))
                     .OrderBy(sn => (sn.Span, matchingTextSpan), _rpTextSpanComparer)
-                    // There may not be any matches because of the limited scope
                     .FirstOrDefault();
 
                 if (matchingNode == null)
