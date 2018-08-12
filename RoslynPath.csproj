@@ -60,6 +60,7 @@
     <Compile Include="RPElements\RPSyntaxKindRegexPairElement.cs" />
     <Compile Include="RPElements\RPWildcardElement.cs" />
     <Compile Include="RPEvaluator.cs" />
+    <Compile Include="RPInfixToPostfix.cs" />
     <Compile Include="RPRegexFactory.cs" />
     <Compile Include="RPResultNode.cs" />
     <Compile Include="RPResultNodeBuilder.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="RPTextSpanComparer.cs" />
     <Compile Include="RPTokenListReader.cs" />
     <Compile Include="RPTokenPrecedence.cs" />
+    <Compile Include="RPTokenTypes\RPAndTokenType.cs" />
     <Compile Include="RPTokenTypes\RPCloseBracketTokenType.cs" />
     <Compile Include="RPTokenTypes\RPCloseParentheseTokenType.cs" />
     <Compile Include="RPTokenTypes\RPDeepTokenType.cs" />
@@ -82,6 +84,7 @@
     <Compile Include="RPTokenTypes\RPLocalRootTokenType.cs" />
     <Compile Include="RPTokenTypes\RPOpenBracketTokenType.cs" />
     <Compile Include="RPTokenTypes\RPOpenParentheseTokenType.cs" />
+    <Compile Include="RPTokenTypes\RPOrTokenType.cs" />
     <Compile Include="RPTokenTypes\RPRegexTokenType.cs" />
     <Compile Include="RPTokenTypes\RPGlobalRootTokenType.cs" />
     <Compile Include="RPToken.cs" />
