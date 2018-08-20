@@ -6,30 +6,30 @@ namespace RoslynPath
 {
     internal static class RPInfixToPostfix
     {
-        private static readonly HashSet<Type> _operators = new HashSet<Type>()
+        public static HashSet<Type> Operators { get; } = new HashSet<Type>()
         {
             typeof(RPAndTokenType),
             typeof(RPOrTokenType)
         };
 
-        private static readonly HashSet<Type> _operands = new HashSet<Type>()
+        public static HashSet<Type> Operands { get; } = new HashSet<Type>()
         {
             typeof(RPRegexTokenType),
             typeof(RPSyntaxKindTokenType),
             typeof(RPIntegerTokenType)
         };
 
-        public static IEnumerable<RPToken> Sort(IEnumerable<RPToken> inputSequence)
+        public static IEnumerable<RPToken> Apply(IEnumerable<RPToken> inputSequence)
         {
             Stack<RPToken> operatorStack = new Stack<RPToken>();
             List<RPToken> outputSequence = new List<RPToken>();
 
             foreach (RPToken token in inputSequence)
             {
-                if (_operands.Contains(token.TokenType))
+                if (Operands.Contains(token.TokenType))
                     outputSequence.Add(token);
 
-                else if (_operators.Contains(token.TokenType) && (operatorStack.Count == 0 || operatorStack.Peek().TokenType == typeof(RPOpenParentheseTokenType)))
+                else if (Operators.Contains(token.TokenType) && (operatorStack.Count == 0 || operatorStack.Peek().TokenType == typeof(RPOpenParentheseTokenType)))
                     operatorStack.Push(token);
 
                 else if (token.TokenType == typeof(RPOpenParentheseTokenType))
@@ -52,7 +52,7 @@ namespace RoslynPath
                     }
                 }
 
-                else if (_operators.Contains(token.TokenType))
+                else if (Operators.Contains(token.TokenType))
                 {
                     outputSequence.Add(operatorStack.Pop());
                     operatorStack.Push(token);

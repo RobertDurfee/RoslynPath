@@ -22,7 +22,7 @@ namespace UnitTests
                 new RPToken(typeof(RPCloseParentheseTokenType), ")")
             };
 
-            IEnumerable<RPToken> actualTokens = RPInfixToPostfix.Sort(inputTokens);
+            IEnumerable<RPToken> actualTokens = RPInfixToPostfix.Apply(inputTokens);
 
             // /Regex1/ "SyntaxKind1" ||
             List<RPToken> expectedTokens = new List<RPToken>()
@@ -58,7 +58,7 @@ namespace UnitTests
                 new RPToken(typeof(RPCloseParentheseTokenType), ")")
             };
 
-            IEnumerable<RPToken> actualTokens = RPInfixToPostfix.Sort(inputTokens);
+            IEnumerable<RPToken> actualTokens = RPInfixToPostfix.Apply(inputTokens);
 
             // "/Regex1/ "SyntaxKind1" || /Regex2/ "SyntaxKind2" || &&
             List<RPToken> expectedTokens = new List<RPToken>()
@@ -96,7 +96,7 @@ namespace UnitTests
                 new RPToken(typeof(RPCloseParentheseTokenType), ")")
             };
 
-            IEnumerable<RPToken> actualTokens = RPInfixToPostfix.Sort(inputTokens);
+            IEnumerable<RPToken> actualTokens = RPInfixToPostfix.Apply(inputTokens);
 
             // /Regex1/ /Regex2/ /Regex3/ && ||
             List<RPToken> expectedTokens = new List<RPToken>()
@@ -132,7 +132,7 @@ namespace UnitTests
                 new RPToken(typeof(RPCloseParentheseTokenType), ")")
             };
 
-            IEnumerable<RPToken> actualTokens = RPInfixToPostfix.Sort(inputTokens);
+            IEnumerable<RPToken> actualTokens = RPInfixToPostfix.Apply(inputTokens);
         }
 
         [TestMethod]
@@ -152,7 +152,7 @@ namespace UnitTests
                 new RPToken(typeof(RPCloseParentheseTokenType), ")")
             };
 
-            IEnumerable<RPToken> actualTokens = RPInfixToPostfix.Sort(inputTokens);
+            IEnumerable<RPToken> actualTokens = RPInfixToPostfix.Apply(inputTokens);
         }
 
         [TestMethod]
@@ -174,7 +174,7 @@ namespace UnitTests
                 new RPToken(typeof(RPCloseParentheseTokenType), ")")
             };
 
-            IEnumerable<RPToken> actualTokens = RPInfixToPostfix.Sort(inputTokens);
+            IEnumerable<RPToken> actualTokens = RPInfixToPostfix.Apply(inputTokens);
         }
 
         [TestMethod]
@@ -196,7 +196,7 @@ namespace UnitTests
                 new RPToken(typeof(RPCloseParentheseTokenType), ")")
             };
 
-            IEnumerable<RPToken> actualTokens = RPInfixToPostfix.Sort(inputTokens);
+            IEnumerable<RPToken> actualTokens = RPInfixToPostfix.Apply(inputTokens);
         }
 
         [TestMethod]
@@ -217,7 +217,14 @@ namespace UnitTests
                 new RPToken(typeof(RPCloseBracketTokenType), "}")
             };
 
-            IEnumerable<RPToken> actualTokens = RPInfixToPostfix.Sort(inputTokens);
+            IEnumerable<RPToken> actualTokens = RPInfixToPostfix.Apply(inputTokens);
+        }
+
+        [TestMethod]
+        public void Should_Sort_When_GivenFilterExpression1()
+        {
+            // [/Regex1/][/Regex2/][/Regex3/] || [/Regex4/]
+
         }
     }
 }

@@ -56,8 +56,13 @@ namespace RoslynPath
 
             if (rpElementBuilderType.GetMethod("ConvertTokens").DeclaringType == typeof(RPElementBuilder))
                 throw new Exception($"{rpElementBuilderType} does not implement the ConvertTokens method.");
-            
-            IRPElementBuilder elementBuilder = (IRPElementBuilder)Activator.CreateInstance(rpElementBuilderType, new object[] { Options, Element });
+
+            IRPElementBuilder elementBuilder;
+
+            if (Options.ContainsKey("IsComplex") && Options["IsComplex"] == "True")
+                elementBuilder = new RPComplexElementBuilder(Options, Element);
+            else
+                elementBuilder = (IRPElementBuilder)Activator.CreateInstance(rpElementBuilderType, new object[] { Options, Element });
 
             int tokensConsumed = elementBuilder.ConvertTokens(tokens);
 

@@ -14,7 +14,24 @@ namespace RoslynPath
             if (!Options.ContainsKey(typeof(RPScanTypes).Name))
                 Options[typeof(RPScanTypes).Name] = Enum.GetName(typeof(RPScanTypes), (int)RPScanTypes.Children);
 
-            return base.ConvertTokens(tokens.Skip(1)) + 1;
+            IEnumerable<RPToken> expressionTokens = tokens.Skip(1).TakeWhile(t => t.TokenType != typeof(RPCloseBracketTokenType));
+
+            if (expressionTokens.Count() > 1)
+            {
+                Options["IsComplex"] = "True";
+
+                IEnumerable<RPToken> expressionTokensPostfix = RPInfixToPostfix.Apply(expressionTokens);
+                IEnumerable<RPToken> remainingTokens = tokens.Skip(1 + expressionTokens.Count());
+
+                int consumedTokens = 1 + (expressionTokens.Count() - expressionTokensPostfix.Count());
+
+                return base.ConvertTokens(expressionTokensPostfix.Concat(remainingTokens)) + consumedTokens;
+            }
+            else
+            {
+                Options["IsComplex"] = "False";
+                return base.ConvertTokens(tokens.Skip(1)) + 1;
+            }
         }
     }
 }
